@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Statistik Pengunjung - Wisata Kalitalang</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">Kalitalang<span class="accent">.</span></a>
+      <nav class="nav-links" id="nav-links">
+      <a href="index.html">Beranda</a>
+        <a href="profil.html">Profil</a>
+        <a href="statistik.html" class="active">Statistik pengunjung</a>
+        <a href="jalur.html">Jalur tracking</a>
+        <a href="dayatarik.html">Daya tarik</a>
+        <a href="edukasi.html">Edukasi</a>
+        <a href="galeri.html">Galeri</a>
+        <a href="tentang.html">Tentang</a>
+        <a href="kontak.html">Kontak</a>
+      </nav>
+      <button class="menu-btn" id="menu-btn" aria-label="menu">☰</button>
+    </div>
+  </header>
+
+  <section class="page-header fade-in">
+    <h1>Statistik Pengunjung Kalitalang</h1>
+    <p>Data jumlah wisatawan per bulan(simulasi data tahun 2025).</p>
+  </section>
+
+  <main class="container fade-in" style="padding-bottom: 60px;">
+    <main class="container fade-in" style="padding-bottom: 60px;">
+  
+  <!-- ===== RINGKASAN DATA ===== -->
+  <section class="data-summary fade-in">
+    <h2>Ringkasan Data Utama</h2>
+    <div class="summary-grid">
+      <div class="summary-card">
+        <h3>Total Pengunjung</h3>
+        <p><strong>6.310</strong> orang</p>
+      </div>
+      <div class="summary-card">
+        <h3>Rata-rata Per Bulan</h3>
+        <p><strong>526</strong> orang</p>
+      </div>
+      <div class="summary-card">
+        <h3>Bulan Teramai</h3>
+        <p><strong>Juli</strong> – 850 orang</p>
+      </div>
+      <div class="summary-card">
+        <h3>Bulan Sepi</h3>
+        <p><strong>Februari</strong> – 280 orang</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GRAFIK ===== -->
+  <div class="chart-section">
+    <canvas id="pengunjung" height="120"></canvas>
+  </div>
+
+  <!-- ===== INTERPRETASI DATA ===== -->
+  <section class="data-info fade-in">
+    <h2>Interpretasi Data</h2>
+    <p>
+      Berdasarkan grafik, jumlah pengunjung OWA Kalitalang mengalami peningkatan signifikan pada pertengahan tahun, 
+      terutama bulan Juli yang bertepatan dengan musim liburan sekolah. Tren ini menunjukkan potensi wisata tertinggi 
+      pada musim kemarau, sementara bulan Februari memiliki jumlah pengunjung paling rendah kemungkinan karena curah hujan tinggi.
+    </p>
+  </section>
+</main>
+
+    <div class="chart-section">
+      <canvas id="pengunjung" height="120"></canvas>
+    </div>
+
+    <section class="data-info fade-in">
+      <h2>Interpretasi Data</h2>
+      <p>
+        MASIH KOSONG
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <h4>Wisata Kalitalang</h4>
+        <p>Ekowisata lereng Merapi berbasis edukasi dan konservasi.</p>
+      </div>
+      <div>
+        <h4>Kontak</h4>
+        <p>Email: <a href="mailto:-@gmail.com">-@gmail.com</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Kelompok 5 Kalitalang</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    const pengunjung = document.getElementById('pengunjung').getContext('2d');
+    new Chart(pengunjung, {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'],
+        datasets: [{
+          label: 'Jumlah Pengunjung',
+          data: [320, 280, 400, 380, 520, 720, 850, 810, 650, 560, 430, 390],
+          borderColor: '#40916C',
+          backgroundColor: 'rgba(64,145,108,0.15)',
+          tension: 0.4,
+          fill: true,
+          borderWidth: 3,
+          pointRadius: 5,
+          pointBackgroundColor: '#ffcc00'
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          title: {
+            display: true,
+            text: 'Statistik Pengunjung per Bulan (2025)',
+            color: '#1B4332',
+            font: { size: 18, weight: 'bold' }
+          }
+        },
+        scales: {
+          y: { beginAtZero: true, ticks: { color: '#3A2E25' } },
+          x: { ticks: { color: '#3A2E25' } }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
