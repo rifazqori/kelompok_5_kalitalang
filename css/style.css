@@ -610,3 +610,59 @@ form button {
   color: var(--brown);
   margin-bottom: 15px;
 }
+
+.intro-tracking {
+  padding-top: 100px; /* atur sesuai tinggi header kamu */
+}
+
+.tracking-image,
+.tracking-map {
+  width: 100%;
+  border-radius: 16px;
+  margin-top: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.tracking-image {
+  width: 100%;          /* biar panjang selebar web */
+  max-height: 350px;    /* batasi tinggi biar gak kegedean */
+  object-fit: cover;    /* biar gambar tetap rapi dan gak gepeng */
+  border-radius: 16px;
+  margin-top: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Buat tampilan per pos di sini */
+.pos-card { 
+  display: flex;
+  flex-wrap: wrap;
+  gap: 70px;
+  margin-bottom: 30px;
+  align-items: center;
+}
+
+.pos-card img {
+  width: 320px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.pos-info {
+  flex: 1;
+  min-width: 250px;
+  border: #1B4332 5px solid;
+  border-radius: 15px;
+  padding: 45px;
+}
+
+/* Mengaatur jarak rute pos pendakian dan gambar pos 1 -4  */
+.jalur-overview {
+  margin-bottom: 35px;
+}
+
+.tips-section ul {
+  list-style: disc;
+  padding-left: 20px;
+  line-height: 1.8;
+}
+/* SAMPE SINI MAS */
+/* ======================== */
